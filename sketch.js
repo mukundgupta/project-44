@@ -10,71 +10,73 @@ function preload(){
   play_IMG = loadImage("playicon.png")
   rotate_coin = loadAnimation("coinsImages/coin1.png","coinsImages/coin2.png","coinsImages/coin3.png","coinsImages/coin4.png","coinsImages/coin5.png","coinsImages/coin6.png")
   diamondIMG = loadImage("coinsImages/blueDiamond.png")
-  levelicon = loadImage("backImages/rect2t.png")
+ // levelicon = loadImage("backImages/rect2t.png")
   level_backIMG = loadImage("backImages/checkerboard_green.png")
 }
-function setup() {
+function setup(){
   createCanvas(1030,600);
   play_icon = createSprite(730,300,80,80)
   play_icon.addImage("play",play_IMG)
   play_icon.scale = 0.9
-  rotatingCoin = createSprite(700,45)
+  rotatingCoin = createSprite(900,20)
   rotatingCoin.addAnimation("rotate",rotate_coin)
   rotatingCoin.scale = 0.09
-  diamondSprite = createSprite(37,50)
+  diamondSprite = createSprite(17,18)
   diamondSprite.addImage("img",diamondIMG)
   diamondSprite.scale = 0.1
 
-  level1icon = createSprite(250,130)
-  level1icon.addImage("r",levelicon)
-  level1icon.visible = false
-  level1icon.scale=0.6
+  this.startButton1 = createButton("ENTER LEVEL 1")
+this.startButton1.mousePressed(()=>{
+  this.startButton1.hide();
+})
 
-  level2icon = createSprite(250,230)
-  level2icon.addImage("r",levelicon)
-  level2icon.visible = false
-  level2icon.scale=0.6
-
-  level3icon = createSprite(250,330)
-  level3icon.addImage("r",levelicon)
-  level3icon.visible = false
-  level3icon.scale=0.6
-
-  level4icon = createSprite(250,430)
-  level4icon.addImage("r",levelicon)
-  level4icon.visible = false
-  level4icon.scale=0.6
-
-  level5icon = createSprite(250,530)
-  level5icon.addImage("r",levelicon)
-  level5icon.visible = false
-  level5icon.scale=0.6
-
-  level6icon = createSprite(800,130)
-  level6icon.addImage("r",levelicon)
-  level6icon.visible = false
-  level6icon.scale=0.6
-
-  level7icon = createSprite(800,230)
-  level7icon.addImage("r",levelicon)
-  level7icon.visible = false
-  level7icon.scale=0.6
-
-  level8icon = createSprite(800,330)
-  level8icon.addImage("r",levelicon)
-  level8icon.visible = false
-  level8icon.scale=0.6
-
-  level9icon = createSprite(800,430)
-  level9icon.addImage("r",levelicon)
-  level9icon.visible = false
-  level9icon.scale=0.6
-
-  level10icon = createSprite(800,530)
-  level10icon.addImage("r",levelicon)
-  level10icon.visible = false
-  level10icon.scale=0.6
+this.startButton2 = createButton("ENTER LEVEL 2")
+this.startButton2.mousePressed(()=>{
+  this.startButton2.hide();
+})
+this.startButton2.hide();
   
+this.startButton3 = createButton("ENTER LEVEL 3")
+this.startButton3.mousePressed(()=>{
+  this.startButton3.hide();
+})
+
+this.startButton4 = createButton("ENTER LEVEL 4")
+this.startButton4.mousePressed(()=>{
+  this.startButton4.hide();
+})
+
+this.startButton5 = createButton("ENTER LEVEL 5")
+this.startButton5.mousePressed(()=>{
+  this.startButton5.hide();
+})
+
+this.startButton6 = createButton("ENTER LEVEL 6")
+this.startButton6.mousePressed(()=>{
+  this.startButton6.hide();
+})
+
+this.startButton7= createButton("ENTER LEVEL 7")
+this.startButton7.mousePressed(()=>{
+  this.startButton7.hide();
+})
+
+this.startButton8 = createButton("ENTER LEVEL 8")
+this.startButton8.mousePressed(()=>{
+  this.startButton8.hide();
+})
+
+this.startButton9 = createButton("ENTER LEVEL 9")
+this.startButton9.mousePressed(()=>{
+  this.startButton9.hide();
+})
+
+this.startButton10 = createButton("ENTER LEVEL 10")
+this.startButton10.mousePressed(()=>{
+  this.startButton10.hide();
+})
+
+
 }
 function draw() {
   
@@ -87,28 +89,15 @@ function draw() {
   
   play_icon.visible = true;
   if(mousePressedOver(play_icon)){
-    gameState = "LEVEL_CHOOSE"
+    gameState = "LEVEL1"
     play_icon.visible = false
   }
   }
   if (gameState=== "LEVEL_CHOOSE"){
     background(back_IMG);  
-    level1icon.visible = true
-    level2icon.visible = true
-level3icon.visible = true
-level4icon.visible = true
-level5icon.visible = true
-level6icon.visible = true
-level7icon.visible = true
-level8icon.visible = true
-level9icon.visible = true
-level10icon.visible = true
 
-fill("black")
-    textSize(30)
-    text("LEVEL 1",150,130)
 
-if(mousePressedOver(level1icon)){
+/*if(mousePressedOver(level1icon)){
   gameState = "LEVEL1"
 }
 
@@ -147,22 +136,133 @@ if(mousePressedOver(level9icon)){
 if(mousePressedOver(level10icon)){
   gameState = "LEVEL10"
 }
+*/
     
   }
 
   if(gameState==="LEVEL1"){
     background(level_backIMG)
-    console.log("LEVEL 1")
+    this.startButton1.position(400,300)
+    this.startButton1.style('width', '200px')
+    this.startButton1.style('height', '30')
+    this.startButton1.style('background', 'skyblue');
+    this.startButton1.style('color', 'darkblue');
+    this.startButton1.style('font', 'Courier New');
+
   }
+
+  if(gameState==="LEVEL2"){
+    background(level_backIMG)
+    this.startButton2.position(400,300)
+    this.startButton2.style('width', '200px')
+    this.startButton2.style('height', '30')
+    this.startButton2.style('background', 'skyblue');
+    this.startButton2.style('color', 'darkblue');
+    this.startButton2.style('font', 'Courier New');
+
+  }
+
+  if(gameState==="LEVEL3"){
+    background(level_backIMG)
+    this.startButton3.position(400,300)
+    this.startButton3.style('width', '200px')
+    this.startButton3.style('height', '30')
+    this.startButton3.style('background', 'skyblue');
+    this.startButton3.style('color', 'darkblue');
+    this.startButton3.style('font', 'Courier New');
+
+  }
+
+  if(gameState==="LEVEL4"){
+    background(level_backIMG)
+    this.startButton4.position(400,300)
+    this.startButton4.style('width', '200px')
+    this.startButton4.style('height', '30')
+    this.startButton4.style('background', 'skyblue');
+    this.startButton4.style('color', 'darkblue');
+    this.startButton4.style('font', 'Courier New');
+
+  }
+
+  if(gameState==="LEVEL5"){
+    background(level_backIMG)
+    this.startButton5.position(400,300)
+    this.startButton5.style('width', '200px')
+    this.startButton5.style('height', '30')
+    this.startButton5.style('background', 'skyblue');
+    this.startButton5.style('color', 'darkblue');
+    this.startButton5.style('font', 'Courier New');
+
+  }
+
+  if(gameState==="LEVEL6"){
+    background(level_backIMG)
+    this.startButton6.position(400,300)
+    this.startButton6.style('width', '200px')
+    this.startButton6.style('height', '30')
+    this.startButton6.style('background', 'skyblue');
+    this.startButton6.style('color', 'darkblue');
+    this.startButton6.style('font', 'Courier New');
+
+  }
+
+  if(gameState==="LEVEL7"){
+    background(level_backIMG)
+    this.startButton7.position(400,300)
+    this.startButton7.style('width', '200px')
+    this.startButton7.style('height', '30')
+    this.startButton7.style('background', 'skyblue');
+    this.startButton7.style('color', 'darkblue');
+    this.startButton7.style('font', 'Courier New');
+
+  }
+
+  if(gameState==="LEVEL8"){
+    background(level_backIMG)
+    this.startButton8.position(400,300)
+    this.startButton8.style('width', '200px')
+    this.startButton8.style('height', '30')
+    this.startButton8.style('background', 'skyblue');
+    this.startButton8.style('color', 'darkblue');
+    this.startButton8.style('font', 'Courier New');
+
+  }
+
+  if(gameState==="LEVEL9"){
+    background(level_backIMG)
+    this.startButton9.position(400,300)
+    this.startButton9.style('width', '200px')
+    this.startButton9.style('height', '30')
+    this.startButton9.style('background', 'skyblue');
+    this.startButton9.style('color', 'darkblue');
+    this.startButton9.style('font', 'Courier New');
+
+  }
+
+  if(gameState==="LEVEL10"){
+    background(level_backIMG)
+    this.startButton10.position(400,300)
+    this.startButton10.style('width', '200px')
+    this.startButton10.style('height', '30')
+    this.startButton10.style('background', 'skyblue');
+    this.startButton10.style('color', 'darkblue');
+    this.startButton10.style('font', 'Courier New');
+
+  }
+
   fill("")
-  rect(680,25,150,40)
+  rect(880,0,150,40)
   textSize(21)
   fill("gold")
-  text("  "+coins,720,55)
+  text("  "+coins,920,27)
   fill("grey")
-  rect(20,30,140,40)
+  rect(0,0,140,40)
   fill("#7DF9FF")
-  text("   "+diamonds,40,55)
+  text("   "+diamonds,20,27)
   noFill();
   drawSprites();
+}
+
+function hide(){
+  this.startButton.hide();
 }
